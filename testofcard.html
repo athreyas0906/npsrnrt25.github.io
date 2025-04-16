@@ -1,0 +1,103 @@
+<html>
+    <style>
+        body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overscroll-behavior: none;
+  background-image: url(https://img.freepik.com/free-photo/brown-wood-textured-background-with-design-space_53876-160425.jpg?t=st=1744809437~exp=1744813037~hmac=33694f59640a636db3e680eeee77f5b2821f9c5efbc872c75a7b099e928076d6&w=1800);
+}
+
+.box {
+  position: relative;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+  z-index: 1;
+}
+.box .card {
+  position: relative;
+  background: rgba(212, 212, 212, 0.1);
+  width: 400px;
+  min-height: 500px;
+  backdrop-filter: blur(7px);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow: 0 45px 95px rgba(0,0,0,0.4);
+  z-index: 0;
+
+  overflow: hidden;
+  padding: 10px;
+}
+
+
+.box .card .elements{
+  position: absolute;
+  left: 50px;
+  width: 300px;
+  height: auto;
+  border-radius: 5px;
+  text-align: center;
+  background: transparent;
+  z-index: 2;
+}
+.box .card .elements h2{
+  font-size: 35px;
+  font-weight: 600;
+  color: #c9c9c9;
+  text-transform: uppercase;
+}
+.box .card .elements p{
+  font-size: 1.5rem;
+  color: #2BD4A9;
+}
+.box .card .elements .a1{
+    font-size: 21px;
+    color: #1A73E8;
+    overflow: hidden;
+    opacity: 0;
+    bottom: 50px;
+
+}
+.box .card .elements .iamge{
+  object-fit: cover; 
+  padding: 30px;
+  
+
+
+}
+.box .card:hover .elements{
+  transform: translateY(0px);
+  transition: 0.5s;
+  transition-timing-function: ease;
+}
+
+.box .card:hover .elements .a1{
+  transform: translateY(-20px);
+  transition: 0.5s;
+  transition-timing-function: ease;
+  opacity: 1;
+}
+.box .card .elements .iamge img{
+  border-radius: 50%; border: 1px solid #2d2d2d; width: 200px; height: 200px;
+  
+}
+
+
+    </style>
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="card">
+        <div class="elements">
+          <div class="iamge">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"  alt="Avatar">
+          </div>
+          <h2>John Doe</h2>
+          <div class="a1">HEAD OF PRESS</div>
+        </div>
+      </div>
+    </div>
+</div>
+</body>
+</html>
