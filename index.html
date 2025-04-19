@@ -20,6 +20,53 @@ body {
   overscroll-behavior: none;
   background: #161D3A;
 }
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  list-style: none;
+  margin-top: 0;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(1rem);
+}
+
+.navbar-left,
+.navbar-right {
+  display: inline-block;
+}
+
+.navbar-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 1rem;
+  font-size: 0.875rem;
+}
+
+.nav-link {
+  display: inline-block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: aliceblue;
+  transition: all 0.1s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #d1d5db; /* Tailwind's gray-300 */
+  font-weight: bold;
+}
+
 .container{
   padding: 100px;
   display: grid;
@@ -108,43 +155,30 @@ body {
 
 
     </style>
-     <ul class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-white relative shadow-2xl shadow-black flex items-center justify-between w-full sticky top-0 z-50">
-    <!-- Left side of the navbar -->
-    <li class="float-left">
-      <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">RNPSMUN</a>
-    </li>
 
-    <!-- Centered nav items -->
-    <div class="topnav-centered absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm space-x-4">
-      <li class="inline-block">
-        <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Secretariat</a>
-      </li>
-      <li class="inline-block">
-        <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Committees</a>
-      </li>
-      <li class="inline-block">
-        <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Delegate Materials</a>
-      </li>
-      <li class="inline-block">
-        <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Guide</a>
-      </li>
-      <li class="inline-block">
-        <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">About</a>
-      </li>
-      <li class="inline-block">
-        <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Contact</a>
-      </li>
-    </div>
-
-    <!-- Right side of the navbar -->
-    <div class="topnav-right pr-9">
-      <li class="float-right inline-block">
-        <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline hover:font-bold hover:text-gray-300 font-bold transition-all duration-100 ease-in-out">Register</a>
-      </li>
-    </div>
-  </ul>
 <body>
-    
+    <ul class="navbar">
+  <!-- Left side of the navbar -->
+  <li class="navbar-left">
+    <a href="#" class="nav-link">RNPSMUN</a>
+  </li>
+
+  <!-- Centered nav items -->
+  <div class="navbar-center">
+    <li><a href="#" class="nav-link">Secretariat</a></li>
+    <li><a href="#" class="nav-link">Committees</a></li>
+    <li><a href="#" class="nav-link">Delegate Materials</a></li>
+    <li><a href="#" class="nav-link">Guide</a></li>
+    <li><a href="#" class="nav-link">About</a></li>
+    <li><a href="#" class="nav-link">Contact</a></li>
+  </div>
+
+  <!-- Right side of the navbar -->
+  <div class="navbar-right">
+    <li><a href="#" class="nav-link">Register</a></li>
+  </div>
+</ul>
+
   <div class="container">
     <div class="box">
       <div class="card">
