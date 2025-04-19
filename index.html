@@ -10,16 +10,16 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  display: flex;
-    -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-  justify-content: center;
-  align-items: center;
+  /* REMOVE flex styles here */
+  user-select: none;
   min-height: 100vh;
   overscroll-behavior: none;
   background: #161D3A;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
 .navbar {
   position: sticky;
   top: 0;
@@ -81,6 +81,9 @@ body {
   border-radius: 20px;
   transform-style: preserve-3d;
   z-index: 1;
+     display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .box .card {
   position: relative;
