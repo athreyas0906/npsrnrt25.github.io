@@ -99,8 +99,7 @@ body {
      display: flex;
   justify-content: center;
   align-items: center;
-transition: 0.5s;
-  transition-timing-function: ease;
+
   overflow: hidden;
   padding: 10px;
 }
@@ -117,6 +116,7 @@ transition: 0.5s;
   z-index: 2;
   transform: translateY(50px);
     align-items: center;
+    transition: all 0.5 ease-in-out;
     
 }
 .box .card .elements h2{
@@ -148,7 +148,8 @@ justify-self:center;
 }
 .box .card:hover .elements{
   transform: translateY(-10px);
-  
+  transition: 0.5s;
+  transition-timing-function: ease;
 }
 
 .box .card:hover .elements .a1{
