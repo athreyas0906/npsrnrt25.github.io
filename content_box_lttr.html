@@ -192,6 +192,15 @@ body {
      
 </body>
 <script>
+    const button = document.querySelector(".box .card");
+
+const readout = document.querySelector("p");
+
+button.addEventListener("mousemove", (e) => {
+  const { x, y } = button.getBoundingClientRect();
+  button.style.setProperty("--x", e.clientX - x);
+  button.style.setProperty("--y", e.clientY - y);
+});
     VanillaTilt.init(document.querySelectorAll(".box"), {
   max: 12,
   speed: 200,
