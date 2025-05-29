@@ -45,11 +45,9 @@ backdrop-filter: blur(7px);
     }
 
  .cancel-btn {
-  position: absolute;
   top: 10px;             /* Add space from top */
   right: 10px;           /* Add space from right */
-  background-color: #e74c3c;
-  color: white;
+  color: gray;
   border: none;
   padding: 6px 12px;
   cursor: pointer;
@@ -61,7 +59,7 @@ backdrop-filter: blur(7px);
 }
 
 .cancel-btn:hover {
-  background-color: #c0392b;
+  color:grey;
 }
 
     .container.expanded .cancel-btn {
@@ -69,12 +67,10 @@ backdrop-filter: blur(7px);
     }
 
     .read-more {
-      position: absolute;
       bottom: 5px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #3498db;
-      color: white;
+      color: gray;
       padding: 5px 10px;
       border: none;
       cursor: pointer;
@@ -161,7 +157,7 @@ backdrop-filter: blur(7px);
         </div>
     </ul>
 <div id="expandableDiv" class="container">
-    <button class="cancel-btn" onclick="collapse()">Close</button>
+    <button class="cancel-btn" onclick="collapse()">X</button>
     <div class="text-wrapper">
       <div class="preview-text">Letter from XYZ</div>
       <div id="fullText" class="full-text">
