@@ -121,6 +121,12 @@ backdrop-filter: blur(7px);
       opacity: 1;
       visibility: visible;
     }
+.center-wrapper {
+  height: calc(100vh - 56px); /* adjust 56px or whatever your navbar height is */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
     .container.expanded .fade-mask {
@@ -165,6 +171,7 @@ backdrop-filter: blur(7px);
         </li>
         </div>
     </ul>
+  <div class="center-wrapper">
 <div id="expandableDiv" class="container">
     <button class="cancel-btn" onclick="collapse()">X</button>
     <div class="text-wrapper">
@@ -175,6 +182,7 @@ backdrop-filter: blur(7px);
       </div>
     </div>
     <button id="readMoreBtn" class="read-more" onclick="expand()">Click to read more</button>
+  </div>
   </div>
 
   
