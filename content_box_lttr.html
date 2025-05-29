@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> <!-- Link to Tailwind CDN -->
-	
-<head>
-  <meta charset="UTF-8">
-  <title>content</title>
-  <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      padding: 20px;
-      background: #161D3A;
-      display: flex;
-  align-items: center;
-  justify-content: center;
-    }
+<html>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> <!-- Link to Tailwind CDN -->
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  /* REMOVE flex styles here */
+  user-select: none;
+  min-height: 100vh;
+  overscroll-behavior: none;
+  background: #161D3A;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  text-align: center;
+  padding: 0;
+}
 
-    .container {
+
+ .container {
   width: 500px;
   height: 110px;
   text-align: center;
@@ -125,8 +132,9 @@
     .container.expanded .fade-mask {
       display: none;
     }
-  </style>
-</head>
+
+    </style>
+
 <body>
     <ul id="nav" class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-white absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50">
         <!-- Left side of the navbar -->
@@ -163,8 +171,7 @@
         </li>
         </div>
     </ul>
-
-  <div id="expandableDiv" class="container">
+div id="expandableDiv" class="container">
     <button class="cancel-btn" onclick="collapse()">Close</button>
     <div class="text-wrapper">
       <div class="preview-text">Letter from XYZ</div>
@@ -177,7 +184,11 @@
     <button id="readMoreBtn" class="read-more" onclick="expand()">Click to read more</button>
   </div>
 
-  <script>
+  
+
+
+</body>
+<script>
     const container = document.getElementById('expandableDiv');
     const readMoreBtn = document.getElementById('readMoreBtn');
     const fullText = document.getElementById('fullText');
@@ -198,6 +209,4 @@
       }, 500);
     }
   </script>
-
-</body>
 </html>
