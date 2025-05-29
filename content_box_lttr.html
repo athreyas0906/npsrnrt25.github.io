@@ -29,11 +29,12 @@ body {
   color: white;
   overflow: hidden;
   transition: width 0.3s ease, height 0.3s ease;
-  background-color: rgba(255, 253, 248, 0.3); /* eggshell white with 0.3 opacity */
-  backdrop-filter: blur(21px);
+  background: rgba(212, 212, 212, 0.1);
+backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(21px); /* Safari support */
   box-sizing: border-box;
-  border-radius: 21px;
+ border: 0.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
 }
 
 
@@ -53,7 +54,7 @@ body {
   cursor: pointer;
   display: none;
   z-index: 2;
-  border-radius: 21px;
+  border-radius: 20px;
   font-size: 12px;
   transition: background-color 0.1s ease-in-out;
 }
@@ -78,7 +79,7 @@ body {
       cursor: pointer;
       z-index: 2;
       transition: opacity 0.3s ease-in-out;
-      border-radius: 21px;
+      border-radius: 20px;
     }
 
     .read-more.hidden {
@@ -90,13 +91,13 @@ body {
   height: 100%;
   padding-top: 50px; /* Increase top padding to clear space for cancel button */
   box-sizing: border-box;
-  border-radius: 21px;
+  border-radius: 20px;
 }
 
 
     .preview-text {
       display: block;
-      border-radius: 21px;
+      border-radius: 20px;
     }
 
     .container.expanded .preview-text {
@@ -107,7 +108,7 @@ body {
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
-      border-radius: 21px;
+      border-radius: 20px;
     }
 
     .full-text.visible {
