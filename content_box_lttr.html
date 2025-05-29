@@ -3,135 +3,131 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> <!-- Link to Tailwind CDN -->
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  /* REMOVE flex styles here */
-  user-select: none;
-  min-height: 100vh;
-  overscroll-behavior: none;
-  background: #161D3A;
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  text-align: center;
-     display: flex;                /* Add flex */
-  justify-content: center;      /* Center horizontally */
-  align-items: center;
-  padding: 0;
-}
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        user-select: none;
+        min-height: 100vh;
+        overscroll-behavior: none;
+        background: #161d3a;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        text-align: center;
+        padding: 0;
+        /* Keep body normal, no flex here */
+      }
 
+      /* Wrapper to center the container below the navbar */
+      .center-wrapper {
+        height: calc(100vh - 56px); /* adjust 56px if your navbar height differs */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
- .container {
-  width: 500px;
-  height: 110px;
-  text-align: center;
-  color: white;
-display: flex;
-  justify-content: center;
-  align-items: center;
+      .container {
+        width: 500px;
+        height: 110px;
+        text-align: center;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-  overflow: hidden;
-  transition: width 0.3s ease, height 0.3s ease;
-  background: rgba(212, 212, 212, 0.1);
-backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(21px); /* Safari support */
-  box-sizing: border-box;
- border: 0.5px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-      box-shadow: 0 45px 95px rgba(0,0,0,0.4);
-}
+        overflow: hidden;
+        transition: width 0.3s ease, height 0.3s ease;
+        background: rgba(212, 212, 212, 0.1);
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(21px); /* Safari support */
+        box-sizing: border-box;
+        border: 0.5px solid rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        box-shadow: 0 45px 95px rgba(0, 0, 0, 0.4);
+        position: relative; /* for cancel button absolute */
+      }
 
+      .container.expanded {
+        width: 600px;
+        height: 400px;
+      }
 
-    .container.expanded {
-      width: 600px;
-      height: 400px;
-    }
+      .cancel-btn {
+        position: absolute;
+        top: 10px; /* Add space from top */
+        right: 10px; /* Add space from right */
+        color: gray;
+        border: none;
+        padding: 6px 12px;
+        cursor: pointer;
+        display: none;
+        z-index: 2;
+        border-radius: 20px;
+        font-size: 12px;
+        transition: background-color 0.1s ease-in-out;
+      }
 
- .cancel-btn {
-     position: absolute;
-  top: 10px;             /* Add space from top */
-  right: 10px;           /* Add space from right */
-  color: gray;
-  border: none;
-  padding: 6px 12px;
-  cursor: pointer;
-  display: none;
-  z-index: 2;
-  border-radius: 20px;
-  font-size: 12px;
-  transition: background-color 0.1s ease-in-out;
-}
+      .cancel-btn:hover {
+        color: grey;
+      }
 
-.cancel-btn:hover {
-  color:grey;
-}
+      .container.expanded .cancel-btn {
+        display: block;
+      }
 
-    .container.expanded .cancel-btn {
-      display: block;
-    }
+      .read-more {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: gray;
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        z-index: 2;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 20px;
+      }
 
-    .read-more {
-        position:absolute;
-      bottom: 5px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: gray;
-      padding: 5px 10px;
-      border: none;
-      cursor: pointer;
-      z-index: 2;
-      transition: opacity 0.3s ease-in-out;
-      border-radius: 20px;
-    }
+      .read-more.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .text-wrapper {
+        position: relative;
+        height: 100%;
+        padding-top: 50px; /* Increase top padding to clear space for cancel button */
+        box-sizing: border-box;
+        border-radius: 20px;
+      }
 
-    .read-more.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-.text-wrapper {
-  position: relative;
-  height: 100%;
-  padding-top: 50px; /* Increase top padding to clear space for cancel button */
-  box-sizing: border-box;
-  border-radius: 20px;
-}
+      .preview-text {
+        display: block;
+        border-radius: 20px;
+      }
 
+      .container.expanded .preview-text {
+        display: none;
+      }
 
-    .preview-text {
-      display: block;
-      border-radius: 20px;
-    }
+      .full-text {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+        border-radius: 20px;
+      }
 
-    .container.expanded .preview-text {
-      display: none;
-    }
+      .full-text.visible {
+        opacity: 1;
+        visibility: visible;
+      }
 
-    .full-text {
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
-      border-radius: 20px;
-    }
-
-    .full-text.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-.center-wrapper {
-  height: calc(100vh - 56px); /* adjust 56px or whatever your navbar height is */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-    .container.expanded .fade-mask {
-      display: none;
-    }
+      .container.expanded .fade-mask {
+        display: none;
+      }
 
     </style>
 
@@ -172,21 +168,22 @@ backdrop-filter: blur(7px);
         </div>
     </ul>
   <div class="center-wrapper">
-<div id="expandableDiv" class="container">
-    <button class="cancel-btn" onclick="collapse()">X</button>
-    <div class="text-wrapper">
-      <div class="preview-text">Letter from XYZ</div>
-      <div id="fullText" class="full-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae eros eget tellus tristique bibendum. 
-        Donec rutrum sed sem quis venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+      <div id="expandableDiv" class="container">
+        <button class="cancel-btn" onclick="collapse()">X</button>
+        <div class="text-wrapper">
+          <div class="preview-text">Letter from XYZ</div>
+          <div id="fullText" class="full-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+            vitae eros eget tellus tristique bibendum. Donec rutrum sed sem
+            quis venenatis. Pellentesque habitant morbi tristique senectus et
+            netus et malesuada fames ac turpis egestas.
+          </div>
+        </div>
+        <button id="readMoreBtn" class="read-more" onclick="expand()">
+          Click to read more
+        </button>
       </div>
     </div>
-    <button id="readMoreBtn" class="read-more" onclick="expand()">Click to read more</button>
-  </div>
-  </div>
-
-  
-
 
 </body>
 <script>
