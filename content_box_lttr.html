@@ -23,17 +23,24 @@
         text-align: center;
         padding: 0;
       }
-
-
       .center-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
       }
+      .bigcont{
+        padding: 100px;
+        display: grid;
+        grid-template-columns: auto auto;
+        align-items: start;
+        column-gap: 150px;
+        justify-content:center;
+        row-gap: 150px;
 
+      }
       .container {
         width: 450px; /* smaller initial width */
-        height: auto; /* lets it grow if content needs */
+        height: 200px; /* lets it grow if content needs */
         text-align: center;
         color: white;
         display: flex;
@@ -59,10 +66,9 @@
       }
       .container.expanded {
         width: 800px;
-        height: auto;
+        height: 600px;
         padding: 30px 40px 40px;
       }
-
       .cancel-btn {
         position: absolute;
         top: 10px;
@@ -77,18 +83,15 @@
         font-size: 12px;
         transition: background-color 0.1s ease-in-out;
       }
-
       .cancel-btn:hover {
         color: grey;
       }
-
       .container.expanded .cancel-btn {
         display: block;
       }
-
       .read-more {
         font-size: 12px;
-        color: rgb(131, 131, 131);
+        color: rgba(255, 255, 255, 0.229);
         padding: 8px 16px;
         border: none;
         cursor: pointer;
@@ -97,53 +100,156 @@
         align-self: center; /* Center horizontally */
         transition: opacity 0.3s ease-in-out, background-color 0.2s ease;
       }
-
-
       .read-more.hidden {
         opacity: 0;
         pointer-events: none;
       }
-
       .text-wrapper {
         position: relative;
         width: 100%;
         border-radius: 20px;
         padding-top: 20px; /* Clear space for cancel button */
         box-sizing: border-box;
+        text-align: left;
       }
-
       .preview-text {
         display: block;
         border-radius: 20px;
-        line-height: 1.2;
+        line-height: 1.2; 
+          color: #26A69A;
+        text-align: center;
       }
-
       .container.expanded .preview-text {
         display: none;
       }
-
       .full-text {
         opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+        display: none;
+        transition: opacity 0.3s ease-in-out, display 0.3s ease;
         border-radius: 20px;
         padding: 10px 0;
         text-align: left;
       }
-
       .full-text.visible {
         opacity: 1;
-        visibility: visible;
+        display: inline;
       }
-
+      .center-wrapper1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container1 {
+        width: 450px; /* smaller initial width */
+        height: 200px; /* lets it grow if content needs */
+        text-align: center;
+        color: white;
+        display: flex;
+        flex-direction: column; /* stack children vertically */
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: width 0.3s ease-in-out, min-height 0.3s ease-in-out,
+          padding 0.3s ease-in-out;
+        background: rgba(212, 212, 212, 0.1);
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(21px);
+        box-sizing: border-box;
+        border: 0.5px solid rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        box-shadow: 0 45px 95px rgba(0, 0, 0, 0.4);
+        position: relative;
+        padding: 10px 30px;
+      }
+      .container1:hover {
+        border: 3px solid rgba(255, 255, 255, 0.15);
+        transition: all 0.3s ease;
+      }
+      .container1.expanded {
+        width: 800px;
+        height: 600px;
+        padding: 30px 40px 40px;
+      }
+      .cancel-btn1 {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: gray;
+        border: none;
+        padding: 6px 12px;
+        cursor: pointer;
+        display: none;
+        z-index: 2;
+        border-radius: 20px;
+        font-size: 12px;
+        transition: background-color 0.1s ease-in-out;
+      }
+      .cancel-btn1:hover {
+        color: grey;
+      }
+      .container1.expanded .cancel-btn1 {
+        display: block;
+      }
+      .read-more1 {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.229);
+        padding: 8px 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+        margin-top: 20px; /* Space above the button */
+        align-self: center; /* Center horizontally */
+        transition: opacity 0.3s ease-in-out, background-color 0.2s ease;
+      }
+      .read-more1.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .text-wrapper1 {
+        position: relative;
+        text-align: left;
+        width: 100%;
+        border-radius: 20px;
+        padding-top: 20px; /* Clear space for cancel button */
+        box-sizing: border-box;
+      }
+      .preview-text1 {
+        display: block;
+        border-radius: 20px;
+          color: #26A69A;
+        line-height: 1.2;
+        text-align: center;
+        text-decoration: 1px underline transparent;
+  
+      }
+      .container1.expanded .preview-text1 {
+        display: inline;
+        font-size: 29px;
+      
+        text-decoration:10px underline white;
+        text-align: center;
+       transition: all 0.3s ease;
+       
+      }
+      .full-text1 {
+        opacity: 0;
+        display: none;
+        transition: opacity 0.3s ease-in-out, display 0.3s ease;
+        border-radius: 20px;
+        padding: 10px 0;
+        text-align: left;
+      }
+      .full-text1.visible {
+        opacity: 1;
+        display: inline;
+      }
     </style>
   </head>
 
   <body>
     <ul
       id="nav"
-      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-white absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50"
-    >
+      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-white absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50">
       <li class="float-left">
         <a
           href="#"
@@ -209,23 +315,54 @@
         </li>
       </div>
     </ul>
-
+<div class="bigcont">
     <div class="center-wrapper">
       <div id="expandableDiv" class="container">
         <button class="cancel-btn" onclick="collapse()">X</button>
         <div class="text-wrapper">
-          <div class="preview-text">Letter from XYZ</div>
+          <div class="preview-text">Letter from the Secretary General</div>
+          <br><br>
           <div id="fullText" class="full-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-            vitae eros eget tellus tristique bibendum. Donec rutrum sed sem
-            quis venenatis. Pellentesque habitant morbi tristique senectus et
-            netus et malesuada fames ac turpis egestas.
+           Greetings delegates! <br><br>
+           As the Secretary-General, I welcome you to the RNPS MUN 2024: The 8th Edition. 
+           <br>Over the years, RNPS MUN has established itself as a platform where young minds with exceptional 
+           problem-solving skills can learn, grow, and shine. My journey is not just filled with research, debates 
+           and negotiations but also with a confidence that has helped me become who I am today. 
+           <br>I’m here today as your Secretary General because 8th-grade me, pulled out all the courage she had and 
+           registered for her very first MUN. This year’s intra-school MUN is the perfect place to be. It’s not 
+           just about the trophy or the title; it’s about the experience. In the years to come, it’s the skills 
+           you pick up in these two days that will do all the talking.Prepare to dive into fiery debates, 
+           embrace challenges and let the diplomat in you take over. I strongly believe that every one of 
+           you has it in you to climb the ladder and make the 8th Edition of this wonderful tradition a huge success.
+           <br><br>I look forward to seeing you all make your mark this year and I wish you the best of luck!
           </div>
         </div>
         <button id="readMoreBtn" class="read-more" onclick="expand()">
           Click to read more
         </button>
       </div>
+    </div>
+    <div class="center-wrapper1">
+      <div id="expandableDiv1" class="container1">
+        <button class="cancel-btn1" onclick="collapse1()">X</button>
+        <div class="text-wrapper1">
+          <div class="preview-text1">What is RNPSMUN?</div>
+          <br><br>
+          <div id="fullText1" class="full-text1">
+            An amalgamation of consistent committees fused with a few unconventional ones, 
+            we have ensured that each delegate, new or experienced, has something to look forward to. 
+            Delegates will have to think on their feet to keep up with the pace of the debate, 
+            combating the obstacles posed, while sticking to the portfolios represented.
+            <br><br>Alliances will be made, strategies devised, while keeping the nations’ 
+            best interests at heart. Factual knowledge along with rational arbitrations will
+             help sail you through! So delegates, come be a part of this exhilarating experience!
+          </div>
+        </div>
+        <button id="readMoreBtn1" class="read-more1" onclick="expand1()">
+          Click to read more
+        </button>
+      </div>
+    </div>
     </div>
 
     <script>
@@ -250,6 +387,34 @@
       }
 
       VanillaTilt.init(document.querySelectorAll(".container"), {
+        max: 1,
+        speed: 180,
+        easing: "cubic-bezier(.03,.98,.52,.99)",
+        reverse: true,
+        glare: true,
+        "max-glare": 0.05,
+      });
+      const container1 = document.getElementById("expandableDiv1");
+      const readMoreBtn1 = document.getElementById("readMoreBtn1");
+      const fullText1 = document.getElementById("fullText1");
+
+      function expand1() {
+        container1.classList.add("expanded");
+        readMoreBtn1.classList.add("hidden");
+        setTimeout(() => {
+          fullText1.classList.add("visible");
+        }, 300);
+      }
+
+      function collapse1() {
+        fullText1.classList.remove("visible");
+        setTimeout(() => {
+          container1.classList.remove("expanded");
+          readMoreBtn1.classList.remove("hidden");
+        }, 500);
+      }
+
+      VanillaTilt.init(document.querySelectorAll(".container1"), {
         max: 1,
         speed: 180,
         easing: "cubic-bezier(.03,.98,.52,.99)",
