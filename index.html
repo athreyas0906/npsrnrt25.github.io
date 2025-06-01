@@ -1,267 +1,262 @@
 <html>
+  <head>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"> <!-- Link to Tailwind CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  /* REMOVE flex styles here */
-  user-select: none;
-  min-height: 100vh;
-  overscroll-behavior: none;
-  background: #161D3A;
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  text-align: center;
-    justify-content:center;
-    
-  padding: 0;
-}
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        user-select: none;
+        min-height: 100vh;
+        overscroll-behavior: none;
+        background: #161d3a;
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        text-align: center;
+        padding: 0;
+      }
 
 
+      .center-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-.container{
-  padding: 100px;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  align-items: start;
-  column-gap: 150px;
-  justify-content:center;
-  margin:0;
-  row-gap: 150px;
-    
+      .container {
+        width: 450px; /* smaller initial width */
+        height: auto; /* lets it grow if content needs */
+        text-align: center;
+        color: white;
+        display: flex;
+        flex-direction: column; /* stack children vertically */
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        transition: width 0.3s ease-in-out, min-height 0.3s ease-in-out,
+          padding 0.3s ease-in-out;
+        background: rgba(212, 212, 212, 0.1);
+        backdrop-filter: blur(7px);
+        -webkit-backdrop-filter: blur(21px);
+        box-sizing: border-box;
+        border: 0.5px solid rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        box-shadow: 0 45px 95px rgba(0, 0, 0, 0.4);
+        position: relative;
+        padding: 10px 30px;
+      }
+      .container:hover {
+        border: 3px solid rgba(255, 255, 255, 0.15);
+        transition: all 0.3s ease;
+      }
+      .container.expanded {
+        width: 800px;
+        height: auto;
+        padding: 30px 40px 40px;
+      }
 
-}
-.box {
-  position: relative;
-  border-radius: 20px;
-  transform-style: preserve-3d;
-   
-  z-index: 1;
-}
-.box .card {
-  position: relative;
-  background: rgba(212, 212, 212, 0.1);
-  width: 350px;
-  min-height: 450px;
-  backdrop-filter: blur(7px);
-  border: 0.5px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  box-shadow: 0 45px 95px rgba(0,0,0,0.4);
-  z-index: 0;
-     display: flex;
-  justify-content: center;
-  align-items: center;
+      .cancel-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: gray;
+        border: none;
+        padding: 6px 12px;
+        cursor: pointer;
+        display: none;
+        z-index: 2;
+        border-radius: 20px;
+        font-size: 12px;
+        transition: background-color 0.1s ease-in-out;
+      }
 
-  overflow: hidden;
-  padding: 10px;
-}
+      .cancel-btn:hover {
+        color: grey;
+      }
 
+      .container.expanded .cancel-btn {
+        display: block;
+      }
 
-.box .card .elements{
-  position: absolute;
-  left: 25px;
-  width: 300px;
-  height: auto;
-  border-radius: 5px;
-  text-align: center;
-  background: transparent;
-  z-index: 2;
-  transform: translateY(50px);
-    align-items: center;
-    transition: all 0.63s ease;
-    
-}
-.box .card .elements h2{
-  font-size: 35px;
-  font-weight: 600;
-  color: #c9c9c9;
-  text-transform: uppercase;
-}
-.box .card .elements p{
-  font-size: 1.5rem;
-  color: #2BD4A9;
-}
-.box .card .elements .a1{
-    font-size: 21px;
-    color: #2BD4A9;
-    overflow: hidden;
-    opacity: 0;
-    padding: 50px;
-    bottom: 0px;
-
-}
-.box .card .elements .iamge{
-  object-fit: cover; 
-  padding: 30px;
-justify-self:center;
-  
+      .read-more {
+        font-size: 12px;
+        color: rgb(131, 131, 131);
+        padding: 8px 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px;
+        margin-top: 20px; /* Space above the button */
+        align-self: center; /* Center horizontally */
+        transition: opacity 0.3s ease-in-out, background-color 0.2s ease;
+      }
 
 
-}
-.box .card:hover .elements{
-  transform: translateY(20px);
-  transition: 0.5s;
-  transition-timing-function: ease;
-}
+      .read-more.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
 
-.box .card:hover .elements .a1{
-  transform: translateY(-30px);
-  padding: 60px;
-  transition: 0.5s;
-  transition-timing-function: ease;
-  opacity: 1;
-}
-.box .card .elements .iamge img{
-  border-radius: 50%; border: 1px solid #2d2d2d; width: 200px; height: 200px;
-  
-}
+      .text-wrapper {
+        position: relative;
+        width: 100%;
+        border-radius: 20px;
+        padding-top: 20px; /* Clear space for cancel button */
+        box-sizing: border-box;
+      }
 
+      .preview-text {
+        display: block;
+        border-radius: 20px;
+        line-height: 1.2;
+      }
+
+      .container.expanded .preview-text {
+        display: none;
+      }
+
+      .full-text {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+        border-radius: 20px;
+        padding: 10px 0;
+        text-align: left;
+      }
+
+      .full-text.visible {
+        opacity: 1;
+        visibility: visible;
+      }
 
     </style>
+  </head>
 
-<body>
-    <ul id="nav" class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-white absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50">
-        <!-- Left side of the navbar -->
-        <li class="float-left">
-        <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">RNPSMUN</a>
-        </li>
-    
-        <!-- Centered nav items -->
-        <div class="topnav-centered absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm space-x-3">
+  <body>
+    <ul
+      id="nav"
+      class="backdrop-filter backdrop-blur-lg bg-opacity-10 bg-black-950 mt-0 list-none p-4 text-white absolute border-b-[0.5px] border-gray-800 flex items-center justify-between w-full sticky top-0 z-50"
+    >
+      <li class="float-left">
+        <a
+          href="#"
+          class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+          >RNPSMUN</a
+        >
+      </li>
+
+      <div
+        class="topnav-centered absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm space-x-3"
+      >
         <li class="inline-block">
-            <a href="content_box_lttr.html" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Secretariat</a>
+          <a
+            href="index.html"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Secretariat</a
+          >
         </li>
         <li class="inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Committees</a>
+          <a
+            href="#"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Committees</a
+          >
         </li>
         <li class="inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Delegate Materials</a>
+          <a
+            href="#"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Delegate Materials</a
+          >
         </li>
         <li class="inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Guide</a>
+          <a
+            href="#"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Guide</a
+          >
         </li>
         <li class="inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">About</a>
+          <a
+            href="#"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >About</a
+          >
         </li>
         <li class="inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out">Contact</a>
+          <a
+            href="#"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline font-bold hover:font-bold hover:text-gray-300 transition-all duration-100 ease-in-out"
+            >Contact</a
+          >
         </li>
-        </div>
-    
-        <!-- Right side of the navbar -->
-        <div class="topnav-right pr-9">
+      </div>
+
+      <div class="topnav-right pr-9">
         <li class="float-right inline-block">
-            <a href="#" class="inline-block text-aliceblue text-center px-3 py-3 no-underline hover:font-bold hover:text-gray-300 font-bold transition-all duration-100 ease-in-out">Register</a>
+          <a
+            href="#"
+            class="inline-block text-aliceblue text-center px-3 py-3 no-underline hover:font-bold hover:text-gray-300 font-bold transition-all duration-100 ease-in-out"
+            >Register</a
+          >
         </li>
-        </div>
+      </div>
     </ul>
 
-  <div class="container">
-    <div class="box">
-      <div class="card">
-        <div class="elements">
-          <div class="iamge">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"  alt="Avatar">
+    <div class="center-wrapper">
+      <div id="expandableDiv" class="container">
+        <button class="cancel-btn" onclick="collapse()">X</button>
+        <div class="text-wrapper">
+          <div class="preview-text">Letter from XYZ</div>
+          <div id="fullText" class="full-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+            vitae eros eget tellus tristique bibendum. Donec rutrum sed sem
+            quis venenatis. Pellentesque habitant morbi tristique senectus et
+            netus et malesuada fames ac turpis egestas.
           </div>
-          <h2>John Doe</h2>
-          <div class="a1">CO-HEAD OF PRESS</div>
         </div>
+        <button id="readMoreBtn" class="read-more" onclick="expand()">
+          Click to read more
+        </button>
       </div>
     </div>
-      <div class="box">
-        <div class="card">
-          <div class="elements">
-            <div class="iamge">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"  alt="Avatar">
-            </div>
-            <h2>John Doe hello</h2>
-            <div class="a1">CO-HEAD OF PRESS</div>
-          </div>
-          </div>
-      </div> 
-      <div class="box">
-        <div class="card">
-          <div class="elements">
-            <div class="iamge">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"  alt="Avatar">
-            </div>
-            <h2>John Doe</h2>
-            <div class="a1">UNSC CHAIR</div>
-          </div>
-          </div>
-      </div>  
-      <div class="box">
-        <div class="card">
-          <div class="elements">
-            <div class="iamge">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"  alt="Avatar">
-            </div>
-            <h2>John Doe</h2>
-            <div class="a1">UNSC VICE-CHAIR</div>
-          </div>
-          </div>
-      </div> 
-      <div class="box">
-        <div class="card">
-          <div class="elements">
-            <div class="iamge">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"  alt="Avatar">
-            </div>
-            <h2>John Doe</h2>
-            <div class="a1">UNHRC CHAIR</div>
-          </div>
-        </div>
-      </div>
-        <div class="box">
-          <div class="card">
-            <div class="elements">
-              <div class="iamge">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"  alt="Avatar">
-              </div>
-              <h2>John Doe</h2>
-              <div class="a1">UNHRC VICE-CHAIR</div>
-            </div>
-            </div>
-        </div> 
-        <div class="box">
-          <div class="card">
-            <div class="elements">
-              <div class="iamge">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"  alt="Avatar">
-              </div>
-              <h2>John Doe</h2>
-              <div class="a1">DISEC CHAIR</div>
-            </div>
-            </div>
-        </div>  
-        <div class="box">
-          <div class="card">
-            <div class="elements">
-              <div class="iamge">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png"  alt="Avatar">
-              </div>
-              <h2>John Doe</h2>
-              <div class="a1">DISEC VICE-CHAIR</div>
-            </div>
-            </div>
-        </div> 
-  
-  </div>
-</body>
-<script>
-    VanillaTilt.init(document.querySelectorAll(".box"), {
-  max: 7,
-  speed: 180,
-  easing: "cubic-bezier(.03,.98,.52,.99)",
-  reverse: true,
-  glare: true,
-  "max-glare": 0.1
-});
-</script>
+
+    <script>
+      const container = document.getElementById("expandableDiv");
+      const readMoreBtn = document.getElementById("readMoreBtn");
+      const fullText = document.getElementById("fullText");
+
+      function expand() {
+        container.classList.add("expanded");
+        readMoreBtn.classList.add("hidden");
+        setTimeout(() => {
+          fullText.classList.add("visible");
+        }, 300);
+      }
+
+      function collapse() {
+        fullText.classList.remove("visible");
+        setTimeout(() => {
+          container.classList.remove("expanded");
+          readMoreBtn.classList.remove("hidden");
+        }, 500);
+      }
+
+      VanillaTilt.init(document.querySelectorAll(".container"), {
+        max: 1,
+        speed: 180,
+        easing: "cubic-bezier(.03,.98,.52,.99)",
+        reverse: true,
+        glare: true,
+        "max-glare": 0.05,
+      });
+    </script>
+  </body>
 </html>
