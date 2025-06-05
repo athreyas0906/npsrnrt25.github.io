@@ -24,6 +24,7 @@
 
   .strip {
     filter: blur(100px);
+    max-width: 100vw;
     /* -webkit-backdrop-filter: blur( 60px ); */
   }
     body {
@@ -77,7 +78,9 @@
       .container{
         grid-template-columns: auto;
         row-gap:7vw;
+        align-items: center;
         padding:1vw;
+
         justify-self:center;
         column-gap:7vw;
         
@@ -267,22 +270,22 @@ function closeNav() {
 
   <body class="overflow-x-hidden">
     <div
-      class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"
+      class="strip w-[0vw] h-72 bg-[#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"
     ></div>
     <div
-      class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-550px] -rotate-45 z-[-1]"
+      class="strip w-[0vw] h-72 bg-[#322996bd] absolute top-50 translate-x-[-550px] -rotate-45 z-[-1]"
     ></div>
     <div
-      class="strip w-[360vw] h-72 bg-[#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"
+      class="strip w-[0vw] h-72 bg-[#322996bd] absolute top-50 -translate-x-[700px] -rotate-45 z-[-1]"
     ></div>
     <div
-      class="strip w-[275px] aspect-square bg-[#322996] absolute top-[230vh] left-[50vw] rounded-full z-[-1]"
+      class="strip w-[0vw] aspect-square bg-[#322996] absolute top-[230vh] left-[50vw] rounded-full z-[-1]"
     ></div>
     <div
-      class="strip w-[275px] aspect-square bg-[#322996] absolute top-[260vh] left-[20vw] rounded-full z-[-1]"
+      class="strip w-[0vw] aspect-square bg-[#322996] absolute top-[260vh] left-[20vw] rounded-full z-[-1]"
     ></div>
     <div
-      class="strip w-[275px] aspect-square bg-[#322996] absolute top-[260vh] left-[100vw] rounded-full z-[-1]"
+      class="strip w-[0vw] aspect-square bg-[#322996] absolute top-[260vh] left-[100vw] rounded-full z-[-1]"
     ></div>
 
     <ul
@@ -344,20 +347,20 @@ function closeNav() {
       </div>
     </ul>
     <div id="mySidebar" class="sidebar block lg:hidden z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#28282B] pt-[60px] backdrop-filter backdrop-blur-lg bg-opacity-10 transition-all duration-500">
-  <a href="javascript:void(0)" class="closebtn absolute top-0 right-[25px] text-[#fff] text-[70px] ml-[50px]" onclick="closeNav()">×</a>
+  <a href="javascript:void(0)" class="closebtn absolute top-0 right-[25px] text-[#fff] text-[10vw] ml-[50px]" onclick="closeNav()">×</a>
  
-    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">RNPSMUN</a>
-    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">Secretariat</a>
-    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">Committees</a>
-    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">Guide</a>
-    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">Contact</a>
-    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">Register</a>
+    <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">RNPSMUN</a>
+    <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Secretariat</a>
+    <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Committees</a>
+    <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Guide</a>
+    <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Contact</a>
+    <a href="#" class="block text-[7vw] text-[#fff] px-[4vw] py-[4vh]">Register</a>
   </div>
 
 <div id="main" class="block lg:hidden z-50 transition-all duration-500 p-4">
   <button 
     onclick="openNav()" 
-    class="fixed top-4 left-4 z-50 text-[20px] text-white px-[5.405vw] py-[4.324vw] rounded-[15px] 
+    class="fixed top-4 left-4 z-50 text-[7vw] text-white px-[5.405vw] py-[4.324vw] rounded-[70px] 
           backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-lg">
     ☰
   </button>
