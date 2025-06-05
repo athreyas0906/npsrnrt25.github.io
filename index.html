@@ -14,6 +14,20 @@
       box-sizing: border-box;
       font-family: "Poppins", sans-serif;
     }
+    body {
+  /* REMOVE flex styles here */
+  user-select: none;
+  min-height: 100vh;
+  overscroll-behavior: none;
+  background: #161D3A;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  text-align: center;
+    justify-content:center;
+
+  padding: 0;
+}
+
 
 .name{
   font-family: "Bungee Spice", sans-serif;
@@ -209,7 +223,7 @@ function closeNav() {
 </script>
 
 
-  <body class="overflow-x-hidden select-none min-h-screen bg-[radial-gradient(#0c1226,_#161d3a)] overscroll-none font-[Poppins] text-center flex justify-center m-0 p-0">
+  <body class="overflow-x-hidden">
     <div
       class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"
     ></div>
