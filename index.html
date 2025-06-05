@@ -1,6 +1,7 @@
 <html>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+    <link src="https://cdn.tailwindcss.com"></link>
   <!-- Link to Tailwind CDN -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,17 +14,7 @@
       box-sizing: border-box;
       font-family: "Poppins", sans-serif;
     }
-body {
-  user-select: none;
-  min-height: 100vh;
-  overscroll-behavior: none;
-  background: radial-gradient(#0c1226, #161d3a);
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  text-align: center;
-  justify-content: center;
-  padding: 0;
-}
+
 .name{
   font-family: "Bungee Spice", sans-serif;
   font-weight: 400;
@@ -35,7 +26,18 @@ body {
     filter: blur(100px);
     /* -webkit-backdrop-filter: blur( 60px ); */
   }
+    body {
+      user-select: none;
+      min-height: 100vh;
+      overscroll-behavior: none;
+      background: radial-gradient(#0c1226, #161d3a);
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      text-align: center;
+      justify-content: center;
 
+      padding: 0;
+    }
 
     .js-tilt-glare {
       position: absolute;
@@ -71,7 +73,7 @@ body {
       margin: 0;
       row-gap: 8.039vw;
     }
-    @media only screen and (max-width: 1200px){
+       @media only screen and (max-width: 1024px){
       .container{
         grid-template-columns: auto;
         row-gap:7vw;
@@ -81,13 +83,17 @@ body {
         
       }
     }
-    
     .box {
       position: relative;
-      border-radius: 20px;
+      border-radius: 70px;
       transform-style: preserve-3d;
 
       z-index: 1;
+    }
+       @media only screen and (max-width: 1200px){
+      .box{
+        justify-content: center;
+      }
     }
     .box .card {
       position: relative;
@@ -96,7 +102,7 @@ body {
       min-height: 24.116vw;
       backdrop-filter: blur(7px);
       border: 0.5px solid rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
+      border-radius: 70px;
       box-shadow: 0 2.412vw 5.091vw rgba(0, 0, 0, 0.4);
       z-index: 0;
       display: flex;
@@ -107,11 +113,12 @@ body {
       overflow: hidden;
       padding: 0.536vw;
     }
-    @media only screen and (max-width: 1200px){
+     @media only screen and (max-width: 1200px){
       .box .card{
         width: 80vw;
         min-height: 60vw;
         justify-self:center;
+        justify-items: center;
         
       }
     }
@@ -121,7 +128,7 @@ body {
       left: 1.34vw;
       width: 16.077vw;
       height: auto;
-      border-radius: 5px;
+      border-radius: 5p70pxx;
       text-align: center;
       background: transparent;
       z-index: 2;
@@ -129,12 +136,14 @@ body {
       align-items: center;
       transition: all 0.63s ease;
     }
-     @media only screen and (max-width: 1200px){
+         @media only screen and (max-width: 1200px){
       .box .card .elements{
         width: 70vw;
-        margin:auto;
-        transform:translateY(0px)
+        margin:0;
+        transform:translateY(0px);
         justify-self:center;
+        justify-content: center;
+        margin: auto
         
       }
     }
@@ -144,9 +153,12 @@ body {
       color: #c9c9c9;
       text-transform: uppercase;
     }
-     @media only screen and (max-width: 1200px){
-      .box .card .elements h2{
-        font-size:6vw;
+         @media only screen and (max-width: 1200px){
+      .box .card .elements{
+        width: 70vw;
+        margin:auto;
+        transform:translateY(0px);
+        justify-self:center;
         
       }
     }
@@ -154,7 +166,13 @@ body {
       font-size: 1.5rem;
       color: #2bd4a9;
     }
-     @media only screen and (max-width: 1200px){
+      @media only screen and (max-width: 1200px){
+      .box .card .elements h2{
+        font-size:6vw;
+        
+      }
+    }
+       @media only screen and (max-width: 1200px){
       .box .card .elements p{
         font-size:2.2rem;
         
@@ -168,16 +186,31 @@ body {
       padding: 2.68vw;
       bottom: 0vw;
     }
+@media only screen and (max-width: 1200px){
+      .box .card .elements .a1{
+        font-size:4vw;
+        bottom:1.608vw;
+        opacity: 1;
+      }
+    }
     .box .card .elements .iamge {
       object-fit: cover;
       padding: 1.608vw;
       justify-self: center;
       align-self: center;
     }
+ 
     .box .card:hover .elements {
       transform: translateY(1.072vw);
       transition: 0.5s;
       transition-timing-function: ease;
+    }
+    @media only screen and (max-width: 1200px){
+      .box .card:hover .elements{
+        transition: none;
+        transform: none;
+        
+      }
     }
 
     .box .card:hover .elements .a1 {
@@ -187,11 +220,26 @@ body {
       transition-timing-function: ease;
       opacity: 1;
     }
+     @media only screen and (max-width: 1200px){
+      .box .card:hover .elements .a1{
+        transition: none;
+        transform: none;
+        padding:2.68vw;
+      }
+    }
+
     .box .card .elements .iamge img {
       border-radius: 50%;
       border: 1px solid #2d2d2d;
       width: 10.718vw;
       height: 10.718vw;
+    }
+       @media only screen and (max-width: 1200px){
+      .box .card .elements .iamge img{
+        width: 30vw;
+        height: 30vw;
+        
+      }
     }
     ul * {
       color: white;
@@ -203,8 +251,8 @@ body {
 <body>
   <script>
 function openNav() {
-  document.getElementById("mySidebar").style.width = "100vw";
-  document.getElementById("main").style.marginLeft = "25vw";
+  document.getElementById("mySidebar").style.width = "100%";
+  document.getElementById("main").style.marginLeft = "25%";
   document.getElementById("main").style.display="none";
 
 }
@@ -298,15 +346,18 @@ function closeNav() {
     <div id="mySidebar" class="sidebar block lg:hidden z-50 fixed top-0 left-0 h-full w-0 overflow-x-hidden bg-[#28282B] pt-[60px] backdrop-filter backdrop-blur-lg bg-opacity-10 transition-all duration-500">
   <a href="javascript:void(0)" class="closebtn absolute top-0 right-[25px] text-[#fff] text-[70px] ml-[50px]" onclick="closeNav()">×</a>
  
-    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">Home</a>
-    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">Projects</a>
-    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">About Me</a>
+    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">RNPSMUN</a>
+    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">Secretariat</a>
+    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">Committees</a>
+    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">Guide</a>
+    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">Contact</a>
+    <a href="#" class="block text-[30px] text-[#fff] px-[4vw] py-[4vh]">Register</a>
   </div>
 
-<div id="main" class="fixed top-4 left-4 block lg:hidden z-50 transition-all duration-500 p-4">
+<div id="main" class="block lg:hidden z-50 transition-all duration-500 p-4">
   <button 
     onclick="openNav()" 
-    class="fixed top-4 left-4 z-50 text-[20px] text-white px-[21px] py-[15px] rounded-[15px] 
+    class="fixed top-4 left-4 z-50 text-[20px] text-white px-[5.405vw] py-[4.324vw] rounded-[15px] 
           backdrop-filter backdrop-blur-lg bg-opacity-10 shadow-lg">
     ☰
   </button>
@@ -320,7 +371,7 @@ function closeNav() {
         <div class="card">
           <div class="elements">
             <div class="iamge">
-              <img src="static/Portrait_Placeholder.png" alt="Avatar" />
+              <img src="Portrait_Placeholder.png" alt="Avatar" />
             </div>
             <h2>John Doe</h2>
             <div class="a1">CO-HEAD OF PRESS</div>
@@ -430,7 +481,7 @@ function closeNav() {
       </div>
     </div>
     <footer
-      class="mt-20 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font h hidden lg:block"
+      class="mt-20 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font h hidden lg:flex"
     >
       <div
         class="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
@@ -540,7 +591,7 @@ function closeNav() {
   </body>
  <script>
   function initTiltIfWideEnough() {
-    if (window.innerWidth >= 1200) {
+    if (window.innerWidth >= 1024) {
       VanillaTilt.init(document.querySelectorAll(".box"), {
         max: 10,
         speed: 180,
@@ -563,5 +614,4 @@ function closeNav() {
     }
   });
 </script>
-
 </html>
