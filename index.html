@@ -2,7 +2,6 @@
   <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
-    <link src="https://cdn.tailwindcss.com"></link>
   <!-- Link to Tailwind CDN -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,18 +26,7 @@
     filter: blur(100px);
     /* -webkit-backdrop-filter: blur( 60px ); */
   }
-    body {
-      user-select: none;
-      min-height: 100vh;
-      overscroll-behavior: none;
-      background: radial-gradient(#0c1226, #161d3a);
-      font-family: "Poppins", sans-serif;
-      margin: 0;
-      text-align: center;
-      justify-content: center;
 
-      padding: 0;
-    }
 
     .js-tilt-glare {
       position: absolute;
@@ -220,7 +208,7 @@ function closeNav() {
 </script>
 
 
-  <body class="overflow-x-hidden">
+  <body class="overflow-hidden select-none min-h-screen max-w-screen overscroll-none font-[Poppins] text-center flex justify-center m-0 p-0">
     <div
       class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"
     ></div>
