@@ -208,7 +208,7 @@ function closeNav() {
 </script>
 
 
-  <body class="overflow-hidden select-none min-h-screen bg-[radial-gradient(#0c1226,_#161d3a)] overscroll-none font-[Poppins] text-center flex justify-center m-0 p-0">
+  <body class="overflow-x-hidden select-none min-h-screen bg-[radial-gradient(#0c1226,_#161d3a)] overscroll-none font-[Poppins] text-center flex justify-center m-0 p-0">
     <div
       class="strip w-[200vw] h-72 bg-[#322996bd] absolute top-25 translate-x-[-1400px] -rotate-45 z-[-1]"
     ></div>
@@ -421,7 +421,7 @@ function closeNav() {
       </div>
     </div>
     <footer
-      class="mt-20 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font h hidden md:flex"
+      class="mt-20 w-full text-white bg-transparent border-t-[1px] border-gray-600 body-font h hidden lg:flex"
     >
       <div
         class="container flex flex-col flex-wrap px-5 py-24 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap"
@@ -531,7 +531,7 @@ function closeNav() {
   </body>
  <script>
   function initTiltIfWideEnough() {
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1200) {
       VanillaTilt.init(document.querySelectorAll(".box"), {
         max: 10,
         speed: 180,
