@@ -512,14 +512,15 @@ function closeNav() {
     </footer>
   </body>
   <script>
-    VanillaTilt.init(document.querySelectorAll(".box"), {
-      max: 10,
-      speed: 180,
-      easing: "cubic-bezier(.03,.98,.52,.99)",
-      reverse: true,
-      glare: true,
-      "max-glare": 0.1,
-      "glare-prerender": true,
-    });
+    if (window.innerWidth >= 768) {
+      VanillaTilt.init(document.querySelectorAll(".box"), {
+        max: 10,
+        speed: 180,
+        easing: "cubic-bezier(.03,.98,.52,.99)",
+        reverse: true,
+        glare: true,
+        "max-glare": 0.1,
+        "glare-prerender": true,
+      }});
   </script>
 </html>
